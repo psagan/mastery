@@ -48,7 +48,7 @@ defmodule Mastery.Core.Quiz do
 
   defp select_a_random_question(quiz) do
     quiz.templates
-    |> Enum.random
+    |> Enum.random # returns tuple from map
     |> elem(1)
     |> Enum.random
     |> Question.new
