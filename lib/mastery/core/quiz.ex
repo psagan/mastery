@@ -67,12 +67,13 @@ defmodule Mastery.Core.Quiz do
     new_category_templates =
       quiz.templates
       |> Map.fetch!(template.category)
-      |> List.delete(template)
+      |> List.delete(template) # returns list without deleted template
 
     new_templates =
-      if new_category_templates == [ ] do
-        Map.delete(quiz.templates, template.category)
+      if new_category_templates == [ ] do # if no more templates in category
+        Map.delete(quiz.templates, template.category) # delete the category
       else
+        # if any templates left - then replace it under category
         Map.put(quiz.templates, template.category, new_category_templates)
       end
 
