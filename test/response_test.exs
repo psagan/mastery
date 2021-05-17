@@ -5,7 +5,7 @@ defmodule ResponseTest do
   describe "a right response and a wrong response" do
     setup [:right, :wrong]
 
-    test "buildings response checks answers", %{right: right, wrong: wrong} do
+    test "building response checks answers", %{right: right, wrong: wrong} do
       assert right.correct
       refute wrong.correct
     end
