@@ -1,12 +1,12 @@
 defmodule QuizBuilders do
   defmacro __using__(_options) do
     quote do
-      alias Mastery.Core.{Template, Response, Quiz}
+      alias Mastery.Core.{Template, Response, Quiz, Question}
       import QuizBuilders, only: :functions
     end
   end
 
-  alias Mastery.Core.{Template, Response, Quiz}
+  alias Mastery.Core.{Template, Response, Quiz, Question}
 
   def template_fields(overrides \\ [ ]) do
     Keyword.merge(
