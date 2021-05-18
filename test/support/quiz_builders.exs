@@ -8,7 +8,7 @@ defmodule QuizBuilders do
 
   alias Mastery.Core.{Template, Response, Quiz, Question}
 
-  def template_fields(overrides \\ [ ]) do
+  def template_fields(overrides \\ []) do
     Keyword.merge(
       [
         name: :single_digit_addition,
@@ -54,14 +54,14 @@ defmodule QuizBuilders do
   def build_quiz(quiz_overrides \\ []) do
     quiz_overrides
     |> quiz_fields
-    |> Quiz.new
+    |> Quiz.new()
   end
 
-  def build_question(overrides \\ [ ]) do
+  def build_question(overrides \\ []) do
     overrides
     |> template_fields
-    |> Template.new
-    |> Question.new
+    |> Template.new()
+    |> Question.new()
   end
 
   def build_quiz_with_two_templates(quiz_overrides \\ []) do

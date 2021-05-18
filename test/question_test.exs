@@ -9,7 +9,7 @@ defmodule QuestionTest do
   end
 
   test "function generators are called" do
-    generators = addition_generators( fn -> 42 end, [0] )
+    generators = addition_generators(fn -> 42 end, [0])
     substitutions = build_question(generators: generators).substitutions
 
     assert Keyword.fetch!(substitutions, :left) == generators.left.()
@@ -33,6 +33,7 @@ defmodule QuestionTest do
       build_question(generators: generators).substitutions
     end)
     |> Enum.find(fn substitution ->
-      Keyword.fetch!(substitution, :left) == answer end)
+      Keyword.fetch!(substitution, :left) == answer
+    end)
   end
 end

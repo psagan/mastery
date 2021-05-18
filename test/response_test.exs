@@ -21,7 +21,7 @@ defmodule ResponseTest do
 
     build_quiz()
     |> Quiz.add_template(fields)
-    |> Quiz.select_question
+    |> Quiz.select_question()
   end
 
   defp response(answer) do
@@ -35,5 +35,4 @@ defmodule ResponseTest do
   defp wrong(context) do
     {:ok, Map.put(context, :wrong, response("2"))}
   end
-
 end
