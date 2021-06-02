@@ -59,7 +59,7 @@ defmodule Mastery.Boundary.QuizSession do
     }
   end
 
-  def via({_title, _email}=name) do
+  def via({_title, _email} = name) do
     {
       :via,
       Registry,
