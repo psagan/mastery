@@ -29,8 +29,8 @@ defmodule Mastery.Boundary.QuizSession do
   end
 
 
-  def answer_question(name, answer) do
-    GenServer.call(via(name), {:answer_question, answer})
+  def answer_question(name, answer, persistence_fn) do
+    GenServer.call(via(name), {:answer_question, answer, persistence_fn})
   end
 
   def active_sessions_for(quiz_title) do
